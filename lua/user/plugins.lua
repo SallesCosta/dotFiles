@@ -49,7 +49,6 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
@@ -57,16 +56,24 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "mhartington/formatter.nvim"
+
+  -- use "nvim-lualine/lualine.nvim"
+  use {
+      'hoob3rt/lualine.nvim',
+      requires = {
+        'kyazdani42/nvim-web-devicons',
+        opt = true
+      }
+    }
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use 'EdenEast/nightfox.nvim'
   use 'shaunsingh/nord.nvim' -- Nord
-  use 'marko-cerovac/material.nvim'
+  -- use 'marko-cerovac/material.nvim'
   use 'norcalli/nvim-colorizer.lua'
-
-  use "mhartington/formatter.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

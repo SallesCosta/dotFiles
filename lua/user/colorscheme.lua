@@ -1,4 +1,5 @@
 -- Material Theme config
+--https://github.com/marko-cerovac/material.nvim
 vim.g.material_style = 'deep ocean'
 
 require('material').setup({
@@ -25,13 +26,12 @@ require('material').setup({
 
   custom_highlights = {} -- Overwrite highlights with your own
 })
--- vim.cmd 'colorscheme material'
 
 vim.cmd [[
 try
   colorscheme nightfox 
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
+  colorscheme nightfox 
   set background=dark
 endtry
 ]]
