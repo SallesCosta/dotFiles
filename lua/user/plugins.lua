@@ -40,7 +40,6 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -60,8 +59,14 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use 'EdenEast/nightfox.nvim'
+  use 'shaunsingh/nord.nvim' -- Nord
+  use 'marko-cerovac/material.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+
+  use "mhartington/formatter.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -74,6 +79,12 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- use { 'dsznajder/vscode-es7-javascript-react-snippets',
+  --   run = 'yarn install --frozen-lockfile && yarn compile'
+  -- }
+
+  use 'windwp/nvim-ts-autotag'
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -93,6 +104,10 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use 'kdheepak/lazygit.nvim'
+
+  -- Presence Discord
+  use 'andweeb/presence.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
