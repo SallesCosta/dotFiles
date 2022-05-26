@@ -1,6 +1,6 @@
 -- Material Theme config
 --https://github.com/marko-cerovac/material.nvim
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'deep ocean' -- oceanic / deep ocean / palenight / lighter / darker
 
 require('material').setup({
   contrast = {
@@ -29,7 +29,7 @@ require('material').setup({
 
 vim.cmd [[
 try
-  colorscheme nightfox 
+  colorscheme terafox " material | nightfox | dayfox | nordfox | dawnfox | duskfox | terafox  | nord
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme nightfox 
   set background=dark

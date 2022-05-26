@@ -1,5 +1,4 @@
 local fn = vim.fn
-
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -58,21 +57,21 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "mhartington/formatter.nvim"
 
-  -- use "nvim-lualine/lualine.nvim"
-  use {
-      'hoob3rt/lualine.nvim',
-      requires = {
-        'kyazdani42/nvim-web-devicons',
-        opt = true
-      }
-    }
-
+  use "nvim-lualine/lualine.nvim"
+  -- use {
+  --     'hoob3rt/lualine.nvim',
+  --     requires = {
+  --       'kyazdani42/nvim-web-devicons',
+  --       opt = true
+  --     }
+  --   }
+  --
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use 'EdenEast/nightfox.nvim'
   use 'shaunsingh/nord.nvim' -- Nord
-  -- use 'marko-cerovac/material.nvim'
+  use 'marko-cerovac/material.nvim'
   use 'norcalli/nvim-colorizer.lua'
 
   -- cmp plugins
@@ -107,11 +106,12 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
-  use 'kdheepak/lazygit.nvim'
+  use "kdheepak/lazygit.nvim"
 
   -- Presence Discord
   use 'andweeb/presence.nvim'

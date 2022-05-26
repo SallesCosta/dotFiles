@@ -1,3 +1,12 @@
+
+-- -- include presence and its config
+-- require('presence'):setup({
+--     enable_line_number = false,
+--     main_image = 'file',
+--     neovim_image_text = 'Its Neovim buddy!!!',
+--     debounce_timeout = 10,
+-- })
+
 -- The setup config table shows all available config options with their default values:
 require("presence"):setup({
     -- General options
@@ -21,3 +30,4 @@ require("presence"):setup({
     workspace_text      = "Working on %s",            -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
     line_number_text    = "Line %s out of %s",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 })
+

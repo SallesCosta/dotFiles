@@ -16,7 +16,8 @@ require 'colorizer'.setup {
 require 'colorizer'.setup({
   'css';
   'javascript';
-  html = { mode = 'background' };
+  -- html = { mode = 'background' }; --aqui
+  html = { mode = 'foreground' };
 }, { mode = 'foreground' })
 
 -- Use the `default_options` as the second parameter, which uses

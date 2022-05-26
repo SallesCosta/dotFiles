@@ -12,7 +12,7 @@ null_ls.setup({
 	debug = true,
 	sources = {
 		formatting.prettier.with({ extra_args = {
-      "--arrow-parens-avoid",
+      "--arrow-parens", "avoid",
       "--no-semi",
       "--single-quote",
       "--jsx-single-quote",
