@@ -58,14 +58,7 @@ return packer.startup(function(use)
   use "mhartington/formatter.nvim"
 
   use "nvim-lualine/lualine.nvim"
-  -- use {
-  --     'hoob3rt/lualine.nvim',
-  --     requires = {
-  --       'kyazdani42/nvim-web-devicons',
-  --       opt = true
-  --     }
-  --   }
-  --
+
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
@@ -86,17 +79,21 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- use { 'dsznajder/vscode-es7-javascript-react-snippets',
-  --   run = 'yarn install --frozen-lockfile && yarn compile'
-  -- }
+  use { 'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
 
   use 'windwp/nvim-ts-autotag'
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
+  --TESTE
+  -- use 'glepnir/lspsaga.nvim'
+
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -115,6 +112,15 @@ return packer.startup(function(use)
 
   -- Presence Discord
   use 'andweeb/presence.nvim'
+
+  -- use {
+  --     'hoob3rt/lualine.nvim',
+  --     requires = {
+  --       'kyazdani42/nvim-web-devicons',
+  --       opt = true
+  --     }
+  --   }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -29,7 +29,7 @@ require('material').setup({
 
 vim.cmd [[
 try
-  colorscheme terafox " material | nightfox | dayfox | nordfox | dawnfox | duskfox | terafox  | nord
+  colorscheme nightfox " material | nightfox | dayfox | nordfox | dawnfox | duskfox | terafox  | nord
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme nightfox 
   set background=dark
