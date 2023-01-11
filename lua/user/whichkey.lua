@@ -43,7 +43,7 @@ local setup = {
     scroll_up = "<c-u>", -- binding to scroll up inside the popup
   },
   window = {
-    border = "rounded", -- none, single, double, shadow
+    border = "single", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -85,7 +85,9 @@ local mappings = {
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+
   ["w"] = { "<cmd>w!<CR>", "Save" },
+
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -95,6 +97,18 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+
+  ["m"] = { "<cmd>Glow<CR>", "Md" },
+
+  x = {
+    name = "Eduardo",
+    w = {"<cmd>wa <CR>", "saveAll"},
+    e = {"<cmd>IconPickerInsert emoji <CR>", "emoji"},
+    n = {"<cmd>IconPickerInsert nerd_font<CR>", "nerd font"},
+    s = {"<cmd>IconPickerInsert symbols<CR>", "symbol"},
+    a = {"<cmd>IconPickerInsert alt_font<CR>", "alt font"},
+    t = {"<cmd>IconPickerInsert emoji nerd_font alt_font symbols<CR>", "todos icones"},
+  },
 
   p = {
     name = "Packer",
@@ -132,14 +146,14 @@ local mappings = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = {
-      "<cmd>Telescope diagnostics bufnr=0<cr>",
+      "<cmd>Telescope lsp_document_diagnostics<cr>",
       "Document Diagnostics",
     },
     w = {
-      "<cmd>Telescope diagnostics<cr>",
+      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
@@ -151,7 +165,7 @@ local mappings = {
       "Prev Diagnostic",
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
