@@ -21,3 +21,4 @@ require "user.whichkey"
 require "user.autocommands"
 
 require "user.colorizer"
+require "user.shade"
