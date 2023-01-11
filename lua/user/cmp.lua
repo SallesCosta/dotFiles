@@ -17,6 +17,7 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
+  Snippet = "",
   Text = "",
   Method = "m",
   Function = "",
@@ -31,7 +32,6 @@ local kind_icons = {
   Value = "",
   Enum = "",
   Keyword = "",
-  Snippet = "",
   Color = "",
   File = "",
   Reference = "",
@@ -42,6 +42,7 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
+  dofile
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -53,10 +54,10 @@ cmp.setup {
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-n>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- EDUARDO
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -101,8 +102,9 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
+        cmp_tabnine = "[Tabnine]",
+        nvim_lsp = "[LSP]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -110,8 +112,9 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
     { name = "luasnip" },
+    { name = 'cmp_tabnine' },
+    { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
   },
@@ -119,11 +122,12 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
+
   window = {
-    documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    },
-  },
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+ },
+
   experimental = {
     ghost_text = false,
     native_menu = false,

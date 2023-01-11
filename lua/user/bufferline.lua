@@ -13,8 +13,7 @@ bufferline.setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-	indicator_icon = nil,
-    indicator = { style = "icon", icon = "▎"},
+    indicator = { style = "icon", icon = "▎" },
     buffer_close_icon = "",
     -- buffer_close_icon = '',
     modified_icon = "●",
@@ -71,6 +70,57 @@ bufferline.setup {
     --   -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
     -- end
+    --[[ groups = { ]]
+    --[[   options = { ]]
+    --[[     toggle_hidden_on_enter = true, ]]
+    --[[   }, ]]
+    --[[   items = { ]]
+    --[[     { ]]
+    --[[       name = "back", ]]
+    --[[       highlight = {underline = true, undercurl = true, italic = true, sp = "gray" }, ]]
+    --[[       priority = 1, ]]
+    --[[       matcher = function(buf) ]]
+    --[[         return buf.name:match("%.go") or buf.name:match("%.lua") ]]
+    --[[       end, ]]
+    --[[     }, ]]
+    --[[     { ]]
+    --[[       name = "front", ]]
+    --[[       highlight = {underline = true, undercurl = true, italic = true, sp = "gray" }, ]]
+    --[[       priority = 2, ]]
+    --[[       matcher = function(buf) ]]
+    --[[         return buf.name:match("%.html") ]]
+    --[[             or buf.name:match("%.css") ]]
+    --[[             or buf.name:match("%.js") ]]
+    --[[             or buf.name:match("%.ts") ]]
+    --[[             or buf.name:match("%.jsx") ]]
+    --[[             or buf.name:match("%.tsx") ]]
+    --[[       end, ]]
+    --[[     }, ]]
+    --[[     { ]]
+    --[[       name = "config", ]]
+    --[[       highlight = {underline = true, undercurl = true, italic = true, sp = "gray" }, ]]
+    --[[       priority = 3, ]]
+    --[[       matcher = function(buf) ]]
+    --[[         return buf.name:match("%.yml") ]]
+    --[[             or buf.name:match("%.lock") ]]
+    --[[             or buf.name:match("%.dev") ]]
+    --[[             or buf.name:match("%.env") ]]
+    --[[             or buf.name:match("%.keep") ]]
+    --[[             or buf.name:match("%.json") ]]
+    --[[       end, ]]
+    --[[     }, ]]
+    --[[     { ]]
+    --[[       name = "doc", ]]
+    --[[       highlight = {underline = true, undercurl = true, italic = true, sp = "gray" }, ]]
+    --[[       priority = 4, ]]
+    --[[       matcher = function(buf) ]]
+    --[[         return buf.name:match("%.md") or buf.name:match("%.txt") ]]
+    --[[       end, ]]
+    --[[     }, ]]
+    --[[   }, ]]
+    --[[ }, ]]
+
+
   },
   highlights = {
     fill = {
@@ -82,11 +132,6 @@ bufferline.setup {
       bg = { attribute = "bg", highlight = "TabLine" },
     },
 
-    -- buffer_selected = {
-    --   fg = {attribute='fg',highlight='#ff0000'},
-    --   bg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
-    --   },
     buffer_visible = {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
@@ -122,17 +167,17 @@ bufferline.setup {
     duplicate_selected = {
       fg = { attribute = "fg", highlight = "TabLineSel" },
       bg = { attribute = "bg", highlight = "TabLineSel" },
-      underline = true,
+      underline = true
     },
     duplicate_visible = {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
-      underline = true,
+      underline = true
     },
     duplicate = {
       fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
-      underline = true,
+      underline = true
     },
 
     modified = {
@@ -156,10 +201,10 @@ bufferline.setup {
       fg = { attribute = "bg", highlight = "Normal" },
       bg = { attribute = "bg", highlight = "Normal" },
     },
-    -- separator_visible = {
-    --   fg = {attribute='bg',highlight='TabLine'},
-    --   bg = {attribute='bg',highlight='TabLine'}
-    --   },
+    separator_visible = { --Eduardo
+      fg = { attribute = 'bg', highlight = 'TabLine' },
+      bg = { attribute = 'bg', highlight = 'TabLine' }
+    },
     indicator_selected = {
       fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
       bg = { attribute = "bg", highlight = "Normal" },
