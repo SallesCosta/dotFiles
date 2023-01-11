@@ -100,6 +100,12 @@ return packer.startup(function(use)
   use 'sunjon/shade.nvim' -- Shade buffers não usados/ destaque o que está ativo
   use 'andweeb/presence.nvim'
   use { "ellisonleao/glow.nvim" } -- MarkDown Viewer
+
+ -- snippets for go
+  use "SirVer/ultisnips" --snipets for golang
+  use "honza/vim-snippets" --snipets for golang
+  use "fatih/vim-go"
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
