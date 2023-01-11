@@ -22,3 +22,5 @@ require "user.autocommands"
 
 require "user.colorizer"
 require "user.shade"
+require "user.presence"
+
