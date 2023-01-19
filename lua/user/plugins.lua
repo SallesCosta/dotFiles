@@ -58,13 +58,13 @@ return packer.startup(function(use)
 	use {"folke/which-key.nvim"}
 
 	-- Colorschemes
-  use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use 'EdenEast/nightfox.nvim' -- NightFox
   use 'shaunsingh/nord.nvim' -- Nord
   use 'marko-cerovac/material.nvim' -- Material
   use 'norcalli/nvim-colorizer.lua'
-
+	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
 	-- Cmp 
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
   use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" } -- buffer completions
@@ -75,7 +75,7 @@ return packer.startup(function(use)
 
 	-- Snippets
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
-  use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
+  -- use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
 	-- LSP
 	use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
@@ -105,6 +105,16 @@ return packer.startup(function(use)
   use "SirVer/ultisnips" --snipets for golang
   use "honza/vim-snippets" --snipets for golang
   use "fatih/vim-go"
+  use 'leafOfTree/vim-vue-plugin'
+
+
+ use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+ use "hrsh7th/cmp-cmdline" -- cmdline completions
+use { 'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
+use 'windwp/nvim-ts-autotag'
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
