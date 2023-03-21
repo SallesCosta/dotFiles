@@ -15,7 +15,7 @@ This config requires [Neovim v0.8.0](https://github.com/neovim/neovim/releases).
 Clone the repository into the correct location (make a backup your current `nvim` directory if you want to keep it).
 
 ```
-git clone https://github.com/LunarVim/Neovim-from-scratch.git ~/.config/nvim
+git clone https://github.com/SallesCosta/dotFiles.git ~/.config/nvim
 ```
 
 Run `nvim` in your terminal and wait for the plugins to be installed. You will notice treesitter pulling in a bunch of language parsers the next time you open Neovim.
